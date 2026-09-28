@@ -28,18 +28,8 @@ const matchItems=[
 {prompt:'Evaluación competencial',correct:'portfolio',options:[['portfolio','Valorar proceso y desempeño mediante proyecto, rúbrica y portafolio de evidencias.'],['exam','Utilizar únicamente un examen memorístico final.'],['attendance','Calificar principalmente la asistencia.'],['speed','Puntuar solo la rapidez con la que se termina la tarea.']]}
 ];
 
-const surveyStatements=[
-'La actividad me ha ayudado a comprender mejor los contenidos trabajados en la sesión.',
-'Las actividades me han ayudado a aplicar los contenidos a una situación educativa concreta.',
-'El caso práctico me ha permitido relacionar la teoría con la práctica profesional.',
-'Las fases de selección y priorización me han ayudado a organizar mejor una respuesta al supuesto.',
-'La actividad de relación entre competencias, tareas y evaluación me ha ayudado a comprender el enfoque competencial.',
-'La herramienta me ha ayudado a identificar contenidos que todavía necesito revisar.',
-'El feedback recibido me ha ayudado a comprender cómo mejorar mis respuestas.',
-'La forma de trabajar los contenidos me ha resultado estimulante.',
-'Después de realizar la actividad considero que podría resolver mejor un caso práctico similar.',
-'Me gustaría utilizar actividades de este tipo en otras sesiones de la asignatura.'
-];
+const commonSurvey=window.COMMON_SURVEY;
+const surveyStatements=commonSurvey.statements;
 
 function show(name){
  Object.values(screens).forEach(id=>document.getElementById(id).classList.remove('active'));
@@ -93,6 +83,8 @@ function renderSurvey(){
   div.innerHTML=`<p><strong>${i+1}.</strong> ${s}</p><div class="likert">${[1,2,3,4,5].map(n=>`<label><input type="radio" name="survey-${i}" value="${n}"> ${n}</label>`).join('')}</div>`;
   box.appendChild(div);
  });
+ const useful=document.getElementById('surveyUseful');
+ useful.innerHTML='<option value="">Selecciona una opción</option>'+commonSurvey.usefulOptions.map(option=>`<option>${option}</option>`).join('');
 }
 
 document.getElementById('evaluateDiagnosis').addEventListener('click',()=>{
@@ -178,7 +170,7 @@ document.getElementById('finishSurvey').addEventListener('click',()=>{
  surveyStatements.forEach((_,i)=>{const checked=document.querySelector(`input[name="survey-${i}"]:checked`);if(!checked)complete=false;likert.push(checked?Number(checked.value):null);});
  const useful=document.getElementById('surveyUseful').value;
  if(!complete||!useful){feedback(document.getElementById('surveyFeedback'),'<strong>Antes de finalizar</strong>, responde los 10 ítems y selecciona qué parte de la experiencia te ha resultado más útil.','warn');return;}
- state.survey={likert,best:document.getElementById('surveyBest').value.trim(),improve:document.getElementById('surveyImprove').value.trim(),useful};
+ state.survey={instrumentVersion:commonSurvey.version,likert,best:document.getElementById('surveyBest').value.trim(),improve:document.getElementById('surveyImprove').value.trim(),useful};
  saveSession();finish();
 });
 
@@ -203,7 +195,7 @@ document.getElementById('restart').addEventListener('click',()=>{
  orderItems=[{id:'train',label:'Formar y acompañar al profesorado en tecnología educativa y metodologías actuales.'},{id:'diagnose',label:'Analizar las necesidades del centro, del alumnado y la situación de partida.'},{id:'implement',label:'Diseñar e implementar actividades activas, interdisciplinarias y apoyadas en tecnología.'},{id:'resources',label:'Planificar recursos, conectividad e infraestructura coherentes con los objetivos educativos.'},{id:'evaluate',label:'Evaluar el impacto de los cambios y ajustar el plan de innovación.'}];
  document.getElementById('openAnswer').value='';document.getElementById('surveyBest').value='';document.getElementById('surveyImprove').value='';document.getElementById('surveyUseful').value='';
  document.querySelectorAll('input[type="radio"]').forEach(x=>x.checked=false);document.querySelectorAll('.feedback').forEach(x=>{x.className='feedback hidden';x.innerHTML='';});
- renderDiagnosis();renderOrder();renderMatch();show('case');
+ renderDiagnosis();renderOrder();renderMatch();renderSurvey();show('case');
 });
 
 renderDiagnosis();renderOrder();renderMatch();renderSurvey();
