@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Sesión 1: adaptación de una escuela de Infantil y Primaria a las demandas del siglo XXI." />
+  <title>Sesión 1 · Enseñanza y Aprendizaje</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">ENSEÑANZA Y APRENDIZAJE · SESIÓN 1</p>
+      <h1>Adaptar la escuela al siglo XXI</h1>
+    </div>
+    <div class="progress-wrap" aria-label="Progreso">
+      <span id="progressLabel">Paso 1 de 6</span>
+      <div class="progress"><div id="progressBar"></div></div>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section id="screen-case" class="screen active">
+      <div class="card hero-card">
+        <span class="badge">CASO PRÁCTICO</span>
+        <h2>CEIP Menéndez Pidal</h2>
+        <p>El CEIP Menéndez Pidal es una escuela de Educación Infantil y Primaria que ha detectado una brecha entre las habilidades y conocimientos que requieren sus estudiantes para desenvolverse en el siglo XXI y lo que el centro les está proporcionando actualmente a través de un modelo educativo tradicional.</p>
+        <div class="question-box">
+          <p><strong>Pregunta 1.</strong> ¿Cómo pueden las escuelas adaptarse a las cambiantes demandas de la sociedad actual, especialmente en términos de tecnología y globalización?</p>
+          <p><strong>Pregunta 2.</strong> ¿Cómo se pueden diseñar las actividades de aprendizaje para desarrollar eficazmente las competencias requeridas en el siglo XXI?</p>
+        </div>
+        <div class="mission">
+          <strong>Tu misión</strong>
+          <p>Diagnostica las necesidades del centro y construye una propuesta de transformación tecnológica, metodológica y competencial.</p>
+        </div>
+        <button class="primary" data-next="diagnosis">Comenzar</button>
+      </div>
+    </section>
+
+    <section id="screen-diagnosis" class="screen">
+      <div class="card">
+        <span class="badge">FASE 1 · DIAGNÓSTICO</span>
+        <h2>¿Qué necesita realmente el centro?</h2>
+        <p class="muted">Selecciona las medidas que contribuirían de forma relevante a la adaptación del CEIP Menéndez Pidal. Puede haber varias correctas.</p>
+        <div id="diagnosisGrid" class="blocks-grid"></div>
+        <div class="actions">
+          <button class="secondary" data-back="case">Volver</button>
+          <button id="evaluateDiagnosis" class="primary">Evaluar selección</button>
+        </div>
+        <div id="diagnosisFeedback" class="feedback hidden"></div>
+      </div>
+    </section>
+
+    <section id="screen-order" class="screen">
+      <div class="card">
+        <span class="badge">FASE 2 · PRIORIZACIÓN</span>
+        <h2>Ordena el proceso de transformación</h2>
+        <p class="muted">Construye una secuencia razonable para iniciar el cambio en el centro.</p>
+        <ol id="orderList" class="order-list"></ol>
+        <div class="actions">
+          <button class="secondary" data-back="diagnosis">Volver</button>
+          <button id="evaluateOrder" class="primary">Comprobar secuencia</button>
+        </div>
+        <div id="orderFeedback" class="feedback hidden"></div>
+      </div>
+    </section>
+
+    <section id="screen-match" class="screen">
+      <div class="card">
+        <span class="badge">FASE 3 · APLICACIÓN</span>
+        <h2>Relaciona competencias, actividades y evaluación</h2>
+        <p class="muted">Elige la opción que mejor conecta cada objetivo de aprendizaje con una práctica coherente.</p>
+        <div id="matchGrid" class="match-grid"></div>
+        <div class="actions">
+          <button class="secondary" data-back="order">Volver</button>
+          <button id="evaluateMatch" class="primary">Evaluar relaciones</button>
+        </div>
+        <div id="matchFeedback" class="feedback hidden"></div>
+      </div>
+    </section>
+
+    <section id="screen-open" class="screen">
+      <div class="card">
+        <span class="badge">FASE 4 · RESOLUCIÓN DEL CASO</span>
+        <h2>Diseña la propuesta del CEIP Menéndez Pidal</h2>
+
+        <div class="case-reminder">
+          <h3>Recuerda el supuesto</h3>
+          <p>El CEIP Menéndez Pidal es una escuela de Educación Infantil y Primaria que ha detectado una brecha entre las habilidades y conocimientos que requieren sus estudiantes para desenvolverse en el siglo XXI y lo que el centro les está proporcionando actualmente a través de un modelo educativo tradicional.</p>
+          <p><strong>Debes responder:</strong> cómo puede adaptarse el centro a las demandas de la sociedad actual —especialmente tecnología y globalización— y cómo deberían diseñarse las actividades de aprendizaje para desarrollar las competencias requeridas en el siglo XXI.</p>
+        </div>
+
+        <div class="requirements">
+          <h3>Tu respuesta debe incluir</h3>
+          <ul>
+            <li>Medidas de infraestructura y conectividad tecnológica.</li>
+            <li>Desarrollo de competencias digitales del alumnado.</li>
+            <li>Formación docente continua.</li>
+            <li>Cultura de innovación y apertura al cambio.</li>
+            <li>Metodologías activas e interdisciplinarias.</li>
+            <li>Uso de la tecnología para crear, colaborar y comunicar.</li>
+            <li>Al menos tres actividades de aprendizaje concretas.</li>
+            <li>Estrategias de evaluación competencial.</li>
+          </ul>
+        </div>
+
+        <textarea id="openAnswer" rows="15" placeholder="Escribe aquí tu propuesta..."></textarea>
+
+        <div class="rubric">
+          <h3>Criterios de revisión</h3>
+          <div class="rubric-grid">
+            <span>Transformación tecnológica · 20</span>
+            <span>Metodologías activas · 20</span>
+            <span>Competencias del siglo XXI · 20</span>
+            <span>Actividades concretas · 25</span>
+            <span>Evaluación y coherencia · 15</span>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="secondary" data-back="match">Volver</button>
+          <button id="evaluateOpen" class="primary">Revisar respuesta</button>
+        </div>
+        <div id="openFeedback" class="feedback hidden"></div>
+      </div>
+    </section>
+
+    <section id="screen-survey" class="screen">
+      <div class="card">
+        <span class="badge">FASE 5 · TU EXPERIENCIA</span>
+        <h2>¿Cómo ha incidido esta actividad en tu aprendizaje?</h2>
+        <p class="muted">Valora cada afirmación de 1 (totalmente en desacuerdo) a 5 (totalmente de acuerdo).</p>
+        <div id="surveyItems" class="survey-list"></div>
+
+        <div class="survey-open">
+          <label for="surveyBest">¿Qué elemento de la actividad consideras que te ha ayudado más a aprender?</label>
+          <textarea id="surveyBest" rows="4"></textarea>
+
+          <label for="surveyImprove">¿Qué cambiarías o mejorarías para que la herramienta te ayudara más a aprender?</label>
+          <textarea id="surveyImprove" rows="4"></textarea>
+
+          <label for="surveyUseful">¿Qué parte de la experiencia te ha ayudado más?</label>
+          <select id="surveyUseful">
+            <option value="">Selecciona una opción</option>
+            <option>Diagnóstico y selección</option>
+            <option>Ordenación y priorización</option>
+            <option>Relación entre competencias, actividades y evaluación</option>
+            <option>Resolución abierta del caso</option>
+          </select>
+        </div>
+
+        <div class="actions">
+          <button class="secondary" data-back="open">Volver</button>
+          <button id="finishSurvey" class="primary">Finalizar experiencia</button>
+        </div>
+        <div id="surveyFeedback" class="feedback hidden"></div>
+      </div>
+    </section>
+
+    <section id="screen-result" class="screen">
+      <div class="card result-card">
+        <span class="badge">RESULTADO</span>
+        <h2>Informe de aprendizaje</h2>
+        <div class="score-ring"><span id="finalScore">0</span><small>/100</small></div>
+        <div id="resultText"></div>
+        <div class="actions center">
+          <button id="restart" class="primary">Volver a intentarlo</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Sesión 1 · Enseñanza y Aprendizaje · Prototipo docente</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
