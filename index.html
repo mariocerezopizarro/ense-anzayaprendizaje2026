@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Prototipo de simulador educativo basado en casos prácticos." />
+  <title>Sembrando saberes · Prototipo</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">ENSEÑANZA Y APRENDIZAJE · TEMA 1</p>
+      <h1>Sembrando saberes</h1>
+    </div>
+    <div class="progress-wrap" aria-label="Progreso">
+      <span id="progressLabel">Paso 1 de 4</span>
+      <div class="progress"><div id="progressBar"></div></div>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section id="screen-case" class="screen active">
+      <div class="card hero-card">
+        <span class="badge">CASO PRÁCTICO</span>
+        <h2>Dificultades en la interacción social en el aula</h2>
+        <p>En un CEIP con una comunidad educativa diversa, un aula de 25 estudiantes presenta problemas de interacción social que afectan al aprendizaje y la convivencia.</p>
+        <p>Se han producido burlas relacionadas con la comida de un compañero y situaciones de marginación hacia un estudiante con menos recursos. Algunas familias muestran preocupación porque sus hijos no quieren asistir al centro.</p>
+        <p>El docente quiere construir un ambiente inclusivo y respetuoso, pero necesita encontrar estrategias más eficaces.</p>
+        <div class="mission">
+          <strong>Tu misión</strong>
+          <p>Construye una respuesta de intervención, justifica tus decisiones y relaciónalas con los enfoques psicopedagógicos del tema.</p>
+        </div>
+        <button class="primary" data-next="blocks">Comenzar intervención</button>
+      </div>
+    </section>
+
+    <section id="screen-blocks" class="screen">
+      <div class="card">
+        <span class="badge">FASE 1 · CONSTRUCCIÓN</span>
+        <h2>Selecciona los bloques que incluirías en tu intervención</h2>
+        <p class="muted">Puedes escoger varios. No todos tienen el mismo valor pedagógico.</p>
+        <div id="blocksGrid" class="blocks-grid"></div>
+        <div class="actions">
+          <button class="secondary" data-back="case">Volver</button>
+          <button id="evaluateBlocks" class="primary">Evaluar selección</button>
+        </div>
+        <div id="blocksFeedback" class="feedback hidden"></div>
+      </div>
+    </section>
+
+    <section id="screen-order" class="screen">
+      <div class="card">
+        <span class="badge">FASE 2 · PRIORIZACIÓN</span>
+        <h2>Ordena tu intervención</h2>
+        <p class="muted">Mueve los pasos con los botones ↑ y ↓ hasta construir una secuencia razonable.</p>
+        <ol id="orderList" class="order-list"></ol>
+        <div class="actions">
+          <button class="secondary" data-back="blocks">Volver</button>
+          <button id="evaluateOrder" class="primary">Comprobar secuencia</button>
+        </div>
+        <div id="orderFeedback" class="feedback hidden"></div>
+      </div>
+    </section>
+
+    <section id="screen-open" class="screen">
+      <div class="card">
+        <span class="badge">FASE 3 · RESPUESTA ABIERTA</span>
+        <h2>Redacta tu propuesta profesional</h2>
+        <p>Explica qué harías, cómo trabajarías con las familias y qué teorías del tema utilizarías para fundamentar tu intervención.</p>
+        <textarea id="openAnswer" rows="10" placeholder="Escribe aquí tu respuesta..."></textarea>
+        <div class="rubric">
+          <h3>Criterios de revisión</h3>
+          <div class="rubric-grid">
+            <span>Interacción e inclusión</span><span>Familias</span><span>Fundamentación teórica</span><span>Coherencia</span>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="secondary" data-back="order">Volver</button>
+          <button id="evaluateOpen" class="primary">Revisar respuesta</button>
+        </div>
+        <div id="openFeedback" class="feedback hidden"></div>
+      </div>
+    </section>
+
+    <section id="screen-result" class="screen">
+      <div class="card result-card">
+        <span class="badge">RESULTADO</span>
+        <h2>Informe de aprendizaje</h2>
+        <div class="score-ring"><span id="finalScore">0</span><small>/100</small></div>
+        <div id="resultText"></div>
+        <div class="actions center">
+          <button id="restart" class="primary">Volver a intentarlo</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Prototipo v0.1 · Contenido basado en el Tema 1 del repositorio.</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
