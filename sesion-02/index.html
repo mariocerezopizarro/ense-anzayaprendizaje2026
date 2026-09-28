@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Sesión 2: teorías psicopedagógicas, desarrollo psicosocial y aprendizaje a lo largo de la vida." />
+  <title>Sesión 2 · Enseñanza y Aprendizaje</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">ENSEÑANZA Y APRENDIZAJE · SESIÓN 2</p>
+      <h1>El desafío del CEIP Las Rosas</h1>
+    </div>
+    <div class="progress-wrap" aria-label="Progreso">
+      <span id="progressLabel">Paso 1 de 6</span>
+      <div class="progress"><div id="progressBar"></div></div>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section id="screen-case" class="screen active">
+      <div class="card hero-card">
+        <span class="badge">CASO PRÁCTICO · SESIÓN 2 · TEMA 1</span>
+        <h2>El desafío del CEIP Las Rosas</h2>
+        <p class="muted"><strong>Tema 1 · Sembrando ideas, cosechando saberes: enseñanza y aprendizaje en la era del conocimiento</strong></p>
+        <p><strong>El CEIP Las Rosas, un colegio de educación infantil y primaria, ha notado en los últimos años que, aunque los estudiantes muestran un rendimiento académico adecuado, muchos de ellos enfrentan dificultades en cuanto a habilidades sociales, trabajo en equipo y adaptabilidad a nuevos desafíos. Además, parece que, al finalizar la etapa primaria, los alumnos tienden a mostrar resistencia hacia el aprendizaje y la curiosidad por explorar nuevos temas disminuye.</strong></p>
+        <p><strong>La dirección del CEIP Las Rosas ha decidido abordar estas problemáticas buscando una manera de aplicar teorías psicopedagógicas que promuevan tanto el desarrollo psicosocial de los estudiantes como una mentalidad de aprendizaje a lo largo de la vida.</strong></p>
+        <div class="question-box">
+          <p><strong>Pregunta.</strong> ¿Cómo se pueden aplicar las teorías psicopedagógicas en el aula para fomentar una mentalidad de aprendizaje a lo largo de la vida y el desarrollo psicosocial en los estudiantes?</p>
+        </div>
+        <div class="mission">
+          <strong>Tu misión</strong>
+          <p>Relaciona los problemas del centro con las teorías psicopedagógicas del Tema 1 y diseña intervenciones de aula coherentes con ellas.</p>
+        </div>
+        <button class="primary" data-next="diagnosis">Comenzar</button>
+      </div>
+    </section>
+
+    <section id="screen-diagnosis" class="screen">
+      <div class="card">
+        <span class="badge">FASE 1 · DIAGNÓSTICO</span>
+        <h2>¿Qué problemas educativos hay que abordar?</h2>
+        <p class="muted">Selecciona las necesidades que aparecen realmente en el caso. Hay opciones plausibles que no responden al problema planteado.</p>
+        <div id="diagnosisGrid" class="blocks-grid"></div>
+        <div class="actions">
+          <button class="secondary" data-back="case">Volver</button>
+          <button id="evaluateDiagnosis" class="primary">Evaluar diagnóstico</button>
+        </div>
+        <div id="diagnosisFeedback" class="feedback hidden"></div>
+      </div>
+    </section>
+
+    <section id="screen-theory" class="screen">
+      <div class="card">
+        <span class="badge">FASE 2 · TEORÍA EN ACCIÓN</span>
+        <h2>Relaciona teoría y respuesta educativa</h2>
+        <p class="muted">No basta con reconocer el nombre de una teoría: identifica qué principio explica mejor cada intervención.</p>
+        <div id="theoryGrid" class="match-grid"></div>
+        <div class="actions">
+          <button class="secondary" data-back="diagnosis">Volver</button>
+          <button id="evaluateTheory" class="primary">Comprobar relaciones</button>
+        </div>
+        <div id="theoryFeedback" class="feedback hidden"></div>
+      </div>
+    </section>
+
+    <section id="screen-apply" class="screen">
+      <div class="card">
+        <span class="badge">FASE 3 · TOMA DE DECISIONES</span>
+        <h2>¿Qué harías en el CEIP Las Rosas?</h2>
+        <p class="muted">Elige la actuación más coherente con la teoría y con el objetivo de fomentar aprendizaje continuo y desarrollo psicosocial.</p>
+        <div id="applyGrid" class="match-grid"></div>
+        <div class="actions">
+          <button class="secondary" data-back="theory">Volver</button>
+          <button id="evaluateApply" class="primary">Evaluar decisiones</button>
+        </div>
+        <div id="applyFeedback" class="feedback hidden"></div>
+      </div>
+    </section>
+
+    <section id="screen-open" class="screen">
+      <div class="card">
+        <span class="badge">FASE 4 · RESOLUCIÓN DEL CASO</span>
+        <h2>Diseña la propuesta del CEIP Las Rosas</h2>
+
+        <div class="case-reminder">
+          <h3>Caso práctico</h3>
+          <h4>El desafío del CEIP Las Rosas</h4>
+          <p><strong>El CEIP Las Rosas, un colegio de educación infantil y primaria, ha notado en los últimos años que, aunque los estudiantes muestran un rendimiento académico adecuado, muchos de ellos enfrentan dificultades en cuanto a habilidades sociales, trabajo en equipo y adaptabilidad a nuevos desafíos. Además, parece que, al finalizar la etapa primaria, los alumnos tienden a mostrar resistencia hacia el aprendizaje y la curiosidad por explorar nuevos temas disminuye.</strong></p>
+          <p><strong>La dirección del CEIP Las Rosas ha decidido abordar estas problemáticas buscando una manera de aplicar teorías psicopedagógicas que promuevan tanto el desarrollo psicosocial de los estudiantes como una mentalidad de aprendizaje a lo largo de la vida.</strong></p>
+          <div class="question-box">
+            <p><strong>Pregunta.</strong> ¿Cómo se pueden aplicar las teorías psicopedagógicas en el aula para fomentar una mentalidad de aprendizaje a lo largo de la vida y el desarrollo psicosocial en los estudiantes?</p>
+          </div>
+        </div>
+
+        <div class="requirements">
+          <h3>Tu respuesta debe conectar teoría y práctica</h3>
+          <ul>
+            <li>Exploración, curiosidad y aprendizaje autónomo.</li>
+            <li>Habilidades sociales, cooperación y resolución de conflictos.</li>
+            <li>Autoconocimiento, autoestima y sensación de competencia.</li>
+            <li>Participación de la familia y la comunidad.</li>
+            <li>Mentalidad de crecimiento y valoración del error como oportunidad.</li>
+            <li>Aplicación explícita de Erikson, especialmente industria frente a inferioridad.</li>
+            <li>Relación con otras teorías del Tema 1: Bandura, Vygotsky, Bowlby y Piaget.</li>
+            <li>Formación continua del profesorado.</li>
+          </ul>
+        </div>
+
+        <textarea id="openAnswer" rows="16" placeholder="Escribe aquí tu propuesta. Explica qué harías, qué teoría lo fundamenta y por qué sería adecuada para el caso..."></textarea>
+
+        <div class="rubric">
+          <h3>Criterios de revisión</h3>
+          <div class="rubric-grid">
+            <span>Exploración y aprendizaje permanente · 15</span>
+            <span>Habilidades sociales y cooperación · 15</span>
+            <span>Autoconocimiento y autoestima · 15</span>
+            <span>Erikson y desarrollo psicosocial · 20</span>
+            <span>Otras teorías psicopedagógicas · 15</span>
+            <span>Familia, formación docente y coherencia · 20</span>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="secondary" data-back="apply">Volver</button>
+          <button id="evaluateOpen" class="primary">Revisar respuesta</button>
+        </div>
+        <div id="openFeedback" class="feedback hidden"></div>
+      </div>
+    </section>
+
+    <section id="screen-survey" class="screen">
+      <div class="card">
+        <span class="badge">FASE 5 · TU EXPERIENCIA</span>
+        <h2>¿Cómo ha incidido esta actividad en tu aprendizaje?</h2>
+        <p class="muted">Valora cada afirmación de 1 (totalmente en desacuerdo) a 5 (totalmente de acuerdo).</p>
+        <div id="surveyItems" class="survey-list"></div>
+        <div class="survey-open">
+          <label for="surveyBest">¿Qué elemento de la actividad consideras que te ha ayudado más a aprender?</label>
+          <textarea id="surveyBest" rows="4"></textarea>
+          <label for="surveyImprove">¿Qué cambiarías o mejorarías para que la herramienta te ayudara más a aprender?</label>
+          <textarea id="surveyImprove" rows="4"></textarea>
+          <label for="surveyUseful">¿Qué parte de la experiencia te ha ayudado más?</label>
+          <select id="surveyUseful"><option value="">Selecciona una opción</option></select>
+        </div>
+        <div class="actions">
+          <button class="secondary" data-back="open">Volver</button>
+          <button id="finishSurvey" class="primary">Finalizar experiencia</button>
+        </div>
+        <div id="surveyFeedback" class="feedback hidden"></div>
+      </div>
+    </section>
+
+    <section id="screen-result" class="screen">
+      <div class="card result-card">
+        <span class="badge">RESULTADO</span>
+        <h2>Informe de aprendizaje</h2>
+        <div class="score-ring"><span id="finalScore">0</span><small>/100</small></div>
+        <div id="resultText"></div>
+        <div class="actions center"><button id="restart" class="primary">Volver a intentarlo</button></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><p>Sesión 2 · Tema 1 · Enseñanza y Aprendizaje</p></footer>
+  <script src="../js/cuestionario-comun.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
