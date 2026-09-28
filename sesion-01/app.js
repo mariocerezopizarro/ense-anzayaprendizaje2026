@@ -127,7 +127,7 @@ document.getElementById('evaluateMatch').addEventListener('click',()=>{
 
 function includesAny(text,terms){return terms.some(t=>text.includes(t));}
 function countActivitySignals(text){
- const signals=['actividad','proyecto','reto','taller','robótica','robotica','programación','programacion','impresión 3d','impresion 3d','diseño','investig','crear','prototipo','presentación','presentacion','portfolio','portafolio'];
+ const signals=['actividad','proyecto','reto','taller','robótica','robotica','programación','programacion','impresión 3d','impresion 3d','diseño','investig','crear','prototipo','presentación','presentacion','portfolio','portafolio','google classroom','classroom','padlet','canva','genially','kahoot','edpuzzle','powtoon','muro virtual','infografía','infografia','cartel','vídeo interactivo','video interactivo','vídeo animado','video animado','cuestionario interactivo','encuesta interactiva'];
  return signals.filter(s=>text.includes(s)).length;
 }
 
@@ -143,7 +143,7 @@ document.getElementById('evaluateOpen').addEventListener('click',()=>{
 
  if(includesAny(text,['aprendizaje basado en proyectos','abp','aprendizaje cooperativo','metodologías activas','metodologias activas','aprender haciendo'])) methods+=12;
  if(includesAny(text,['interdisciplin','diferentes áreas','diferentes areas','integrar áreas','integrar areas'])) methods+=4;
- if(includesAny(text,['crear contenidos','crear contenido','colabor','comunicar resultados','producto digital'])) methods+=4;
+ if(includesAny(text,['crear contenidos','crear contenido','colabor','comunicar resultados','producto digital','google classroom','padlet','canva','genially','powtoon'])) methods+=4;
  if(methods<14) notes.push('Explica mejor cómo cambiarían las metodologías y el papel activo del alumnado.');
 
  if(includesAny(text,['pensamiento crítico','pensamiento critico'])) skills+=4;
@@ -156,10 +156,10 @@ document.getElementById('evaluateOpen').addEventListener('click',()=>{
  const activitySignals=countActivitySignals(text);
  activities=Math.min(25,activitySignals*5);
  if(raw.length>=450) activities=Math.min(25,activities+5);
- if(activities<15) notes.push('Incluye al menos tres actividades o actuaciones concretas y suficientemente desarrolladas.');
+ if(activities<15) notes.push('Incluye al menos tres actividades o actuaciones concretas y suficientemente desarrolladas. Puedes concretarlas con recursos como Google Classroom, Padlet, Canva, Genially, Kahoot, Edpuzzle o PowToon, explicando siempre su finalidad pedagógica.');
 
- if(includesAny(text,['rúbrica','rubrica','portafolio','portfolio','proyecto','evaluación competencial','evaluacion competencial','desempeño','desempeno'])) assessment+=10;
- if(includesAny(text,['evaluación','evaluacion','seguimiento','evidencias'])) assessment+=3;
+ if(includesAny(text,['rúbrica','rubrica','portafolio','portfolio','proyecto','evaluación competencial','evaluacion competencial','desempeño','desempeno','kahoot','edpuzzle'])) assessment+=10;
+ if(includesAny(text,['evaluación','evaluacion','seguimiento','evidencias','cuestionario','encuesta'])) assessment+=3;
  if(raw.length>=650) assessment+=2;
  assessment=Math.min(15,assessment);
  if(assessment<10) notes.push('Concreta cómo evaluarías mediante rúbricas, portafolios, proyectos u otras evidencias de desempeño.');
