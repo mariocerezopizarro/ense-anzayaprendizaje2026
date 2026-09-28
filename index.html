@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Prototipo de simulador educativo basado en casos prácticos." />
-  <title>Sembrando saberes · Prototipo</title>
+  <meta name="description" content="Simulador educativo basado en casos prácticos." />
+  <title>Sembrando saberes · v0.2</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -14,7 +14,7 @@
       <h1>Sembrando saberes</h1>
     </div>
     <div class="progress-wrap" aria-label="Progreso">
-      <span id="progressLabel">Paso 1 de 4</span>
+      <span id="progressLabel">Paso 1 de 5</span>
       <div class="progress"><div id="progressBar"></div></div>
     </div>
   </header>
@@ -29,7 +29,7 @@
         <p>El docente quiere construir un ambiente inclusivo y respetuoso, pero necesita encontrar estrategias más eficaces.</p>
         <div class="mission">
           <strong>Tu misión</strong>
-          <p>Construye una respuesta de intervención, justifica tus decisiones y relaciónalas con los enfoques psicopedagógicos del tema.</p>
+          <p>Analiza el caso, aplica los contenidos del Tema 1 y diseña una intervención educativa fundamentada.</p>
         </div>
         <button class="primary" data-next="blocks">Comenzar intervención</button>
       </div>
@@ -65,14 +65,29 @@
 
     <section id="screen-open" class="screen">
       <div class="card">
-        <span class="badge">FASE 3 · RESPUESTA ABIERTA</span>
-        <h2>Redacta tu propuesta profesional</h2>
-        <p>Explica qué harías, cómo trabajarías con las familias y qué teorías del tema utilizarías para fundamentar tu intervención.</p>
-        <textarea id="openAnswer" rows="10" placeholder="Escribe aquí tu respuesta..."></textarea>
+        <span class="badge">FASE 3 · RESOLUCIÓN DEL CASO</span>
+        <h2>Diseña tu propuesta profesional</h2>
+        <p>Analiza la situación y diseña una intervención para mejorar la convivencia y la interacción social del grupo.</p>
+        <div class="requirements">
+          <h3>Tu respuesta debe incluir</h3>
+          <ul>
+            <li>Análisis de los principales problemas del caso.</li>
+            <li>Uso explícito de contenidos del Tema 1.</li>
+            <li>Fundamentación en teorías o enfoques psicopedagógicos.</li>
+            <li>Al menos tres actividades o actuaciones concretas.</li>
+            <li>Implicación de las familias.</li>
+            <li>Justificación de las decisiones adoptadas.</li>
+          </ul>
+        </div>
+        <textarea id="openAnswer" rows="12" placeholder="Escribe aquí tu propuesta..."></textarea>
         <div class="rubric">
           <h3>Criterios de revisión</h3>
           <div class="rubric-grid">
-            <span>Interacción e inclusión</span><span>Familias</span><span>Fundamentación teórica</span><span>Coherencia</span>
+            <span>Manejo del contenido · 25</span>
+            <span>Resolución del caso · 25</span>
+            <span>Actividades propuestas · 25</span>
+            <span>Fundamentación · 15</span>
+            <span>Familias y coherencia · 10</span>
           </div>
         </div>
         <div class="actions">
@@ -80,6 +95,33 @@
           <button id="evaluateOpen" class="primary">Revisar respuesta</button>
         </div>
         <div id="openFeedback" class="feedback hidden"></div>
+      </div>
+    </section>
+
+    <section id="screen-survey" class="screen">
+      <div class="card">
+        <span class="badge">FASE 4 · TU EXPERIENCIA</span>
+        <h2>¿Cómo ha incidido la herramienta en tu aprendizaje?</h2>
+        <p class="muted">Valora cada afirmación de 1 (totalmente en desacuerdo) a 5 (totalmente de acuerdo).</p>
+        <div id="surveyItems" class="survey-list"></div>
+        <div class="survey-open">
+          <label>¿Qué elemento de la actividad consideras que te ha ayudado más a aprender?</label>
+          <textarea id="surveyBest" rows="4"></textarea>
+          <label>¿Qué cambiarías o mejorarías de la herramienta para que te ayudara más a aprender?</label>
+          <textarea id="surveyImprove" rows="4"></textarea>
+          <label>¿Qué parte de la experiencia te ha ayudado más?</label>
+          <select id="surveyUseful">
+            <option value="">Selecciona una opción</option>
+            <option>Selección de bloques</option>
+            <option>Ordenación y priorización</option>
+            <option>Resolución abierta del caso</option>
+          </select>
+        </div>
+        <div class="actions">
+          <button class="secondary" data-back="open">Volver</button>
+          <button id="finishSurvey" class="primary">Finalizar experiencia</button>
+        </div>
+        <div id="surveyFeedback" class="feedback hidden"></div>
       </div>
     </section>
 
@@ -97,7 +139,7 @@
   </main>
 
   <footer>
-    <p>Prototipo v0.1 · Contenido basado en el Tema 1 del repositorio.</p>
+    <p>Prototipo v0.2 · Contenido basado en el Tema 1 del repositorio.</p>
   </footer>
 
   <script src="js/app.js"></script>
