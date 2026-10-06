@@ -99,8 +99,7 @@ document.getElementById('evaluateOpen').addEventListener('click',()=>{
  if(techEval<16)notes.push('Explica cómo usar tecnología con propósito y cómo evaluar y mejorar el proyecto.');
  if(raw.length<500)notes.push('La respuesta necesita mayor desarrollo y justificación para alcanzar la máxima puntuación.');
  const type=rubric>=80?'good':'warn';
- feedback(document.getElementById('openFeedback'),`<strong>Valoración orientativa: ${rubric}/100.</strong><div class="breakdown"><div>Aprendizaje-servicio y metodologías: ${service}/20</div><div>Rol docente y formación: ${teacher}/15</div><div>Familias: ${families}/15</div><div>Comunidad y redes: ${community}/15</div><div>Diálogo y conflictos: ${dialogue}/15</div><div>Tecnología, evaluación y coherencia: ${techEval}/20</div></div>${notes.length?`<p><strong>Para mejorar:</strong></p><ul>${notes.map(n=>`<li>${n}</li>`).join('')}</ul>`:'<p>La respuesta conecta de forma completa las dimensiones centrales del Tema 4 con el proyecto «Puente de Culturas».</p>'}<button class="primary" id="toSurvey">Continuar</button>`,type);
- document.getElementById('toSurvey').addEventListener('click',()=>show('survey'));
+ feedback(document.getElementById('openFeedback'),`<strong>Valoración orientativa: ${rubric}/100.</strong><div class="breakdown"><div>Aprendizaje-servicio y metodologías: ${service}/20</div><div>Rol docente y formación: ${teacher}/15</div><div>Familias: ${families}/15</div><div>Comunidad y redes: ${community}/15</div><div>Diálogo y conflictos: ${dialogue}/15</div><div>Tecnología, evaluación y coherencia: ${techEval}/20</div></div>${notes.length?`<p><strong>Para mejorar:</strong></p><ul>${notes.map(n=>`<li>${n}</li>`).join('')}</ul>`:'<p>La respuesta conecta de forma completa las dimensiones centrales del Tema 4 con el proyecto «Puente de Culturas».</p>'}`,type);
 });
 
 document.getElementById('finishSurvey').addEventListener('click',()=>{
