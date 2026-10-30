@@ -21,16 +21,31 @@ const theoryItems=[
 ];
 
 const applyItems=[
-{prompt:'Para practicar empatía y toma de perspectiva...',correct:'roles',options:[['roles','Representar conflictos o situaciones emocionales mediante juegos de roles y discutir después cómo se sintió cada personaje.'],['memorize','Memorizar definiciones de empatía sin interacción.'],['avoid','Evitar hablar de emociones para no generar conflicto.'],['rank','Comparar públicamente quién es más empático.']],why:'Los juegos de roles permiten comprender perspectivas y emociones ajenas y se relacionan directamente con la Teoría de la Mente y la conciencia social.'},
-{prompt:'Para mejorar expresión emocional y comprensión mutua...',correct:'dialogue',options:[['dialogue','Crear círculos de diálogo periódicos con escucha activa, turnos de palabra y respeto.'],['lecture','Sustituir el diálogo por una explicación magistral sobre convivencia.'],['silence','Reducir las conversaciones entre iguales.'],['report','Hablar de relaciones solo cuando aparece un problema grave.']],why:'Las discusiones sobre emociones y relaciones ayudan a comprender emociones propias y ajenas y a desarrollar empatía.'},
-{prompt:'Para desarrollar cooperación y habilidades para la relación...',correct:'cooperative',options:[['cooperative','Diseñar tareas cooperativas con objetivo común, coordinación, apoyo mutuo y responsabilidad compartida.'],['parallel','Hacer la misma tarea individualmente sin interacción.'],['competition','Usar una clasificación competitiva permanente.'],['delegate','Dejar que una sola persona resuelva la tarea del grupo.']],why:'Goleman vincula la inteligencia social con cooperar, negociar y resolver conflictos; los proyectos grupales ofrecen un contexto real para practicar estas habilidades.'},
-{prompt:'Para enseñar conductas comunicativas adecuadas...',correct:'model',options:[['model','El docente modela escucha empática, respeto, comunicación asertiva y formas constructivas de responder al conflicto.'],['rules','Limitarse a entregar una lista escrita de normas.'],['punish','Aplicar castigos sin explicar alternativas.'],['ignore','No intervenir para que el alumnado aprenda solo.']],why:'El modelado convierte conductas sociales abstractas en ejemplos observables y coherentes con la interacción cotidiana del aula.'},
-{prompt:'Para consolidar cambios en las relaciones...',correct:'reflect',options:[['reflect','Combinar retroalimentación guiada con auto-reflexión sobre fortalezas, dificultades y objetivos de mejora.'],['grade','Poner una nota final sin comentarios.'],['label','Etiquetar a cada estudiante según su habilidad social.'],['repeat','Repetir la actividad sin analizar lo ocurrido.']],why:'La retroalimentación constructiva y la auto-reflexión ayudan a reconocer avances, identificar áreas de crecimiento y orientar cambios de conducta.'},
-{prompt:'Ante un conflicto entre compañeros...',correct:'resolve',options:[['resolve','Guiar una negociación donde expresen emociones, escuchen perspectivas, busquen acuerdos y revisen después el proceso.'],['separate','Separarlos siempre para evitar cualquier interacción futura.'],['decide','Resolver el adulto el conflicto sin escuchar a las partes.'],['winner','Determinar quién gana y quién pierde.']],why:'El Tema 2 considera la resolución de conflictos y la negociación habilidades esenciales para la conciencia social y las relaciones entre iguales.'}
+{prompt:'Para practicar empatía y toma de perspectiva...',correct:'roles',options:[['roles','Representar conflictos o situaciones emocionales mediante juegos de roles y discutir después cómo se sintió cada personaje.'],['memorize','Analizar por escrito situaciones emocionales y explicar qué podría sentir cada personaje, sin representación.'],['avoid','Trabajar emociones a partir de ejemplos ficticios, evitando inicialmente experiencias personales del grupo.'],['rank','Utilizar una escala de autoevaluación para que cada estudiante valore cuánto comprende a los demás.']],why:'Los juegos de roles permiten comprender perspectivas y emociones ajenas y se relacionan directamente con la Teoría de la Mente y la conciencia social.'},
+{prompt:'Para mejorar expresión emocional y comprensión mutua...',correct:'dialogue',options:[['dialogue','Crear círculos de diálogo periódicos con escucha activa, turnos de palabra y respeto.'],['lecture','Introducir cada sesión con una explicación del docente y dejar un breve turno final de preguntas.'],['silence','Canalizar las conversaciones principalmente mediante intervenciones dirigidas por el profesorado.'],['report','Dedicar sesiones específicas a convivencia cuando se detecten dificultades relevantes en el grupo.']],why:'Las discusiones sobre emociones y relaciones ayudan a comprender emociones propias y ajenas y a desarrollar empatía.'},
+{prompt:'Para desarrollar cooperación y habilidades para la relación...',correct:'cooperative',options:[['cooperative','Diseñar tareas cooperativas con objetivo común, coordinación, apoyo mutuo y responsabilidad compartida.'],['parallel','Resolver primero la tarea de forma individual y comparar después los procedimientos en una puesta en común.'],['competition','Plantear retos por equipos con puntuaciones acumulativas para estimular la implicación del grupo.'],['delegate','Asignar al estudiante con mayor dominio la coordinación y elaboración principal del producto grupal.']],why:'Goleman vincula la inteligencia social con cooperar, negociar y resolver conflictos; los proyectos grupales ofrecen un contexto real para practicar estas habilidades.'},
+{prompt:'Para enseñar conductas comunicativas adecuadas...',correct:'model',options:[['model','El docente modela escucha empática, respeto, comunicación asertiva y formas constructivas de responder al conflicto.'],['rules','Presentar ejemplos de comunicación adecuada y pedir al alumnado que los identifique en una ficha.'],['punish','Aplicar consecuencias previamente acordadas y comentar después qué norma se ha incumplido.'],['ignore','Observar las interacciones y ofrecer orientación únicamente cuando el conflicto no se resuelva de forma espontánea.']],why:'El modelado convierte conductas sociales abstractas en ejemplos observables y coherentes con la interacción cotidiana del aula.'},
+{prompt:'Para consolidar cambios en las relaciones...',correct:'reflect',options:[['reflect','Combinar retroalimentación guiada con auto-reflexión sobre fortalezas, dificultades y objetivos de mejora.'],['grade','Utilizar una escala de valoración al finalizar la actividad y comunicar el resultado al alumnado.'],['label','Clasificar el nivel de competencia social en categorías para orientar futuras actividades.'],['repeat','Programar varias repeticiones de la dinámica esperando que la práctica produzca una mejora progresiva.']],why:'La retroalimentación constructiva y la auto-reflexión ayudan a reconocer avances, identificar áreas de crecimiento y orientar cambios de conducta.'},
+{prompt:'Ante un conflicto entre compañeros...',correct:'resolve',options:[['resolve','Guiar una negociación donde expresen emociones, escuchen perspectivas, busquen acuerdos y revisen después el proceso.'],['separate','Dar un tiempo de calma por separado y pedir después a cada uno que explique por escrito su versión.'],['decide','Escuchar brevemente a ambas partes y proponer una solución adulta que permita retomar la actividad.'],['winner','Establecer qué norma se ha incumplido y aplicar la consecuencia correspondiente antes de continuar.']],why:'El Tema 2 considera la resolución de conflictos y la negociación habilidades esenciales para la conciencia social y las relaciones entre iguales.'}
 ];
 
 const commonSurvey=window.COMMON_SURVEY;
 const surveyStatements=commonSurvey.statements;
+
+function orderedDiagnosisOptions(){
+  const good=diagnosisOptions.filter(o=>o.good);
+  const bad=diagnosisOptions.filter(o=>!o.good);
+  const out=[]; let gi=0,bi=0;
+  const pattern=['b','g','g','b','g','b','g','g','g'];
+  pattern.forEach(k=>{if(k==='g'&&gi<good.length)out.push(good[gi++]);if(k==='b'&&bi<bad.length)out.push(bad[bi++]);});
+  return out.concat(good.slice(gi),bad.slice(bi));
+}
+function orderedChoices(options,correct,index){
+  const right=options.find(([v])=>v===correct);
+  const wrong=options.filter(([v])=>v!==correct);
+  const positions=[1,2,3,1,3,2];
+  const out=[...wrong]; out.splice(Math.min(positions[index%positions.length],out.length),0,right); return out;
+}
 
 function show(name){
  Object.values(screens).forEach(id=>document.getElementById(id).classList.remove('active'));
@@ -48,7 +63,7 @@ function feedback(el,html,type='good'){el.className=`feedback ${type}`;el.innerH
 
 function renderDiagnosis(){
  const grid=document.getElementById('diagnosisGrid');
- diagnosisOptions.forEach(o=>{
+ orderedDiagnosisOptions().forEach(o=>{
   const btn=document.createElement('button');btn.className='block-option';btn.dataset.id=o.id;
   btn.innerHTML=`<strong>${o.title}</strong><span>${o.text}</span>`;
   btn.addEventListener('click',()=>btn.classList.toggle('selected'));
@@ -60,7 +75,7 @@ function renderTheory(){
  const grid=document.getElementById('theoryGrid');
  theoryItems.forEach((item,i)=>{
   const card=document.createElement('div');card.className='match-card';
-  card.innerHTML=`<strong>${item.prompt}</strong><select id="theory-${i}"><option value="">Selecciona el concepto</option>${item.options.map(([v,l])=>`<option value="${v}">${l}</option>`).join('')}</select>`;
+  card.innerHTML=`<strong>${item.prompt}</strong><select id="theory-${i}"><option value="">Selecciona el concepto</option>${orderedChoices(item.options,item.correct,i).map(([v,l])=>`<option value="${v}">${l}</option>`).join('')}</select>`;
   grid.appendChild(card);
  });
 }
@@ -69,7 +84,7 @@ function renderApply(){
  const grid=document.getElementById('applyGrid');
  applyItems.forEach((item,i)=>{
   const card=document.createElement('div');card.className='match-card';
-  card.innerHTML=`<strong>${item.prompt}</strong><select id="apply-${i}"><option value="">Selecciona la actuación más adecuada</option>${item.options.map(([v,l])=>`<option value="${v}">${l}</option>`).join('')}</select>`;
+  card.innerHTML=`<strong>${item.prompt}</strong><select id="apply-${i}"><option value="">Selecciona la actuación más adecuada</option>${orderedChoices(item.options,item.correct,i).map(([v,l])=>`<option value="${v}">${l}</option>`).join('')}</select>`;
   grid.appendChild(card);
  });
 }
