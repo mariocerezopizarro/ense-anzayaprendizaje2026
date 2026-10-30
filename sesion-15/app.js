@@ -117,7 +117,7 @@ const expectations=Math.min(15,pts(text,[
 
 const activities=Math.min(20,pts(text,[
 {terms:['actividades didácticas críticas','actividades didacticas criticas','propuestas didácticas críticas','propuestas didacticas criticas'],points:5},
-{terms:['identificar estereotipos','cuestionar estereotipos','cuestionamiento del currículum oculto','cuestionamiento del curriculum oculto'],points:5},
+{terms:['identificar estereotipos','identificar y cuestionar estereotipos','detectar estereotipos','cuestionar estereotipos','cuestionamiento del currículum oculto','cuestionamiento del curriculum oculto'],points:5},
 {terms:['reescribir cuentos','reinventar cuentos','dramatizar profesiones','dramatización','dramatizacion'],points:5},
 {terms:['acción transformadora','accion transformadora','participación activa','participacion activa','empoderamiento'],points:5}
 ]));
