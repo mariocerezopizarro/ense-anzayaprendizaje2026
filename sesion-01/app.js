@@ -22,14 +22,31 @@ let orderItems=[
 const idealOrder=['diagnose','resources','train','implement','evaluate'];
 
 const matchItems=[
-{prompt:'Pensamiento crítico y alfabetización informacional',correct:'research',options:[['research','Investigar un problema real, contrastar fuentes y justificar conclusiones.'],['slides','Copiar información de internet en una presentación.'],['drill','Completar ejercicios repetitivos en una aplicación.'],['video','Ver un vídeo y responder preguntas literales.']]},
-{prompt:'Creatividad y competencia digital',correct:'create',options:[['create','Diseñar un producto digital, prototipo o recurso multimedia para resolver una necesidad.'],['notes','Tomar apuntes digitales del libro de texto.'],['quiz','Responder un test autocorregible.'],['scan','Escanear una ficha ya realizada en papel.']]},
-{prompt:'Colaboración y comunicación efectiva',correct:'team',options:[['team','Desarrollar un proyecto cooperativo con reparto de roles y presentación pública de resultados.'],['solo','Realizar individualmente la misma tarea y comparar notas al final.'],['copy','Compartir un documento para copiar una respuesta común.'],['listen','Escuchar una explicación sin interacción entre iguales.']]},
-{prompt:'Evaluación competencial',correct:'portfolio',options:[['portfolio','Valorar proceso y desempeño mediante proyecto, rúbrica y portafolio de evidencias.'],['exam','Utilizar únicamente un examen memorístico final.'],['attendance','Calificar principalmente la asistencia.'],['speed','Puntuar solo la rapidez con la que se termina la tarea.']]}
+{prompt:'Pensamiento crítico y alfabetización informacional',correct:'research',options:[['research','Investigar un problema real, contrastar fuentes y justificar conclusiones.'],['slides','Elaborar una presentación a partir de varias fuentes seleccionadas previamente por el docente.'],['drill','Resolver ejercicios interactivos con retroalimentación automática para afianzar contenidos.'],['video','Analizar un vídeo divulgativo y elaborar un resumen de sus ideas principales.']]},
+{prompt:'Creatividad y competencia digital',correct:'create',options:[['create','Diseñar un producto digital, prototipo o recurso multimedia para resolver una necesidad.'],['notes','Transformar los apuntes del tema en un esquema digital utilizando una plantilla.'],['quiz','Completar un cuestionario interactivo con elementos multimedia para comprobar la comprensión.'],['scan','Digitalizar una producción realizada en papel e incorporarla a un portafolio electrónico.']]},
+{prompt:'Colaboración y comunicación efectiva',correct:'team',options:[['team','Desarrollar un proyecto cooperativo con reparto de roles y presentación pública de resultados.'],['solo','Resolver individualmente distintas partes de una tarea y reunirlas al final en un producto común.'],['copy','Editar un documento compartido hasta consensuar una respuesta, sin distribución específica de funciones.'],['listen','Preparar una exposición grupal siguiendo un guion común establecido por el docente.']]},
+{prompt:'Evaluación competencial',correct:'portfolio',options:[['portfolio','Valorar proceso y desempeño mediante proyecto, rúbrica y portafolio de evidencias.'],['exam','Combinar una prueba final con la revisión de algunas actividades realizadas durante la unidad.'],['attendance','Considerar asistencia, entrega de tareas y participación como indicadores principales del progreso.'],['speed','Valorar el producto final mediante una lista de requisitos comunes, sin recoger evidencias del proceso.']]}
 ];
 
 const commonSurvey=window.COMMON_SURVEY;
 const surveyStatements=commonSurvey.statements;
+
+function orderedDiagnosisOptions(){
+  const good=diagnosisOptions.filter(o=>o.good);
+  const bad=diagnosisOptions.filter(o=>!o.good);
+  const out=[]; let gi=0,bi=0;
+  const pattern=['b','g','g','b','g','b','g','g','g'];
+  pattern.forEach(k=>{if(k==='g'&&gi<good.length)out.push(good[gi++]);if(k==='b'&&bi<bad.length)out.push(bad[bi++]);});
+  return out.concat(good.slice(gi),bad.slice(bi));
+}
+function orderedChoices(options,correct,index){
+  const right=options.find(([v])=>v===correct);
+  const wrong=options.filter(([v])=>v!==correct);
+  const positions=[1,2,3,1,3,2];
+  const out=[...wrong];
+  out.splice(Math.min(positions[index%positions.length],out.length),0,right);
+  return out;
+}
 
 function show(name){
  Object.values(screens).forEach(id=>document.getElementById(id).classList.remove('active'));
@@ -48,7 +65,7 @@ function feedback(el,html,type='good'){el.className=`feedback ${type}`;el.innerH
 
 function renderDiagnosis(){
  const grid=document.getElementById('diagnosisGrid');grid.innerHTML='';
- diagnosisOptions.forEach(o=>{
+ orderedDiagnosisOptions().forEach(o=>{
   const btn=document.createElement('button');btn.className='block-option';btn.dataset.id=o.id;
   btn.innerHTML=`<strong>${o.title}</strong><span>${o.text}</span>`;
   btn.addEventListener('click',()=>btn.classList.toggle('selected'));
@@ -71,7 +88,7 @@ function renderMatch(){
  const grid=document.getElementById('matchGrid');grid.innerHTML='';
  matchItems.forEach((item,i)=>{
   const card=document.createElement('div');card.className='match-card';
-  card.innerHTML=`<strong>${item.prompt}</strong><select id="match-${i}"><option value="">Selecciona la práctica más adecuada</option>${item.options.map(([v,l])=>`<option value="${v}">${l}</option>`).join('')}</select>`;
+  card.innerHTML=`<strong>${item.prompt}</strong><select id="match-${i}"><option value="">Selecciona la práctica más adecuada</option>${orderedChoices(item.options,item.correct,i).map(([v,l])=>`<option value="${v}">${l}</option>`).join('')}</select>`;
   grid.appendChild(card);
  });
 }
