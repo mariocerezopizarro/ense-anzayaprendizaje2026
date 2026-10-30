@@ -22,16 +22,31 @@ const theoryItems=[
 ];
 
 const applyItems=[
-{prompt:'Primeros días de Ahmed en el aula',correct:'buddy',options:[['buddy','Asignar un compañero de bienvenida y combinarlo con dinámicas para conocer al conjunto del grupo.'],['alone','Dejar que se adapte solo para no señalarlo.'],['speech','Pedirle que explique su cultura ante toda la clase como única medida.'],['same','Actuar como si su incorporación no requiriera ninguna acogida específica.']],why:'El acompañamiento entre iguales puede aportar seguridad y una referencia próxima, pero debe abrir el acceso de Ahmed al grupo y no convertirlo en dependiente de una única persona.'},
-{prompt:'Descubrimiento mutuo',correct:'share',options:[['share','Realizar presentaciones personales y actividades de “mostrar y contar” donde todos compartan elementos significativos de su identidad.'],['Ahmed','Centrar toda la actividad exclusivamente en Ahmed.'],['quiz','Evaluar conocimientos sobre países mediante un test memorístico.'],['avoid','Evitar mencionar la cultura para impedir diferencias.']],why:'El descubrimiento mutuo reduce el desconocimiento, favorece la aceptación y evita presentar a Ahmed como “el diferente” frente a un grupo supuestamente homogéneo.'},
-{prompt:'Construcción de vínculos',correct:'coop',options:[['coop','Organizar juegos de equipo y proyectos cooperativos con grupos diversos y objetivos compartidos.'],['random','Sentarlos juntos sin diseñar interacción.'],['competition','Crear competiciones permanentes entre grupos culturales.'],['separate','Permitir agrupamientos estables por origen.']],why:'Las interacciones cooperativas generan oportunidades para conocerse, negociar, colaborar y formar amistades.'},
-{prompt:'Aparece un estereotipo cultural en clase',correct:'challenge',options:[['challenge','Analizar de dónde procede, contrastarlo y mostrar la diversidad interna de las culturas.'],['ignore','Ignorarlo para no darle importancia.'],['punish','Castigar al alumno sin trabajar la idea que expresa.'],['confirm','Explicar que todos los estereotipos contienen una verdad general.']],why:'El Tema 2 plantea contrarrestar activamente los estereotipos y cuestionar las imágenes simplificadas procedentes, entre otras fuentes, de los medios y del desconocimiento.'},
-{prompt:'Trabajo curricular a medio plazo',correct:'curriculum',options:[['curriculum','Integrar distintas voces, historias y perspectivas culturales en actividades ordinarias del currículo.'],['day','Limitar la diversidad a un “día de las culturas” anual.'],['Ahmed','Pedir a Ahmed que sea portavoz permanente de su cultura.'],['extra','Trabajarlo solo en actividades extraescolares.']],why:'La educación intercultural debe incorporarse al currículo y no quedar reducida a actuaciones aisladas o folclóricas.'},
-{prompt:'Clima y participación',correct:'voice',options:[['voice','Establecer normas de respeto y contra el acoso, dar participación al alumnado y mantener comunicación abierta con la familia.'],['adult','Tomar todas las decisiones entre adultos sin escuchar al grupo.'],['silence','Pedir que no se hable de diferencias culturales.'],['special','Aplicar normas diferentes según el origen cultural.']],why:'Un entorno seguro requiere normas claras, participación, trato equitativo y colaboración con las familias y la comunidad.'}
+{prompt:'Primeros días de Ahmed en el aula',correct:'buddy',options:[['buddy','Asignar un compañero de bienvenida y combinarlo con dinámicas para conocer al conjunto del grupo.'],['alone','Ofrecer una acogida general al grupo y permitir que Ahmed elija progresivamente con quién relacionarse.'],['speech','Invitar a Ahmed a compartir voluntariamente algún aspecto de su cultura durante una actividad de presentación.'],['same','Aplicar el protocolo habitual de incorporación y observar durante los primeros días si necesita apoyos adicionales.']],why:'El acompañamiento entre iguales puede aportar seguridad y una referencia próxima, pero debe abrir el acceso de Ahmed al grupo y no convertirlo en dependiente de una única persona.'},
+{prompt:'Descubrimiento mutuo',correct:'share',options:[['share','Realizar presentaciones personales y actividades de “mostrar y contar” donde todos compartan elementos significativos de su identidad.'],['Ahmed','Dedicar una sesión a conocer el país y algunas costumbres de Ahmed antes de ampliar el trabajo a otras identidades.'],['quiz','Realizar un pequeño concurso cultural para introducir curiosidades sobre distintos países y costumbres.'],['avoid','Centrar las primeras actividades en intereses comunes y abordar las diferencias culturales cuando surjan de forma natural.']],why:'El descubrimiento mutuo reduce el desconocimiento, favorece la aceptación y evita presentar a Ahmed como “el diferente” frente a un grupo supuestamente homogéneo.'},
+{prompt:'Construcción de vínculos',correct:'coop',options:[['coop','Organizar juegos de equipo y proyectos cooperativos con grupos diversos y objetivos compartidos.'],['random','Modificar los agrupamientos para aumentar el contacto entre estudiantes, manteniendo las tareas habituales.'],['competition','Organizar retos entre equipos diversos para aumentar el contacto y la motivación mediante competición amistosa.'],['separate','Respetar inicialmente los grupos de afinidad y promover contactos puntuales con otros compañeros.']],why:'Las interacciones cooperativas generan oportunidades para conocerse, negociar, colaborar y formar amistades.'},
+{prompt:'Aparece un estereotipo cultural en clase',correct:'challenge',options:[['challenge','Analizar de dónde procede, contrastarlo y mostrar la diversidad interna de las culturas.'],['ignore','Pedir al grupo que exprese distintas opiniones sobre el comentario y continuar después con la actividad.'],['punish','Recordar la norma de respeto y aplicar la consecuencia prevista, dejando el análisis del estereotipo para otra sesión.'],['confirm','Explicar que algunos estereotipos pueden partir de observaciones parciales, pero que no describen a todas las personas.']],why:'El Tema 2 plantea contrarrestar activamente los estereotipos y cuestionar las imágenes simplificadas procedentes, entre otras fuentes, de los medios y del desconocimiento.'},
+{prompt:'Trabajo curricular a medio plazo',correct:'curriculum',options:[['curriculum','Integrar distintas voces, historias y perspectivas culturales en actividades ordinarias del currículo.'],['day','Programar varias jornadas culturales a lo largo del curso vinculadas a contenidos de distintas áreas.'],['Ahmed','Contar ocasionalmente con Ahmed como fuente de experiencias personales cuando el contenido se relacione con su contexto.'],['extra','Complementar el currículo ordinario con talleres y actividades extraescolares de carácter intercultural.']],why:'La educación intercultural debe incorporarse al currículo y no quedar reducida a actuaciones aisladas o folclóricas.'},
+{prompt:'Clima y participación',correct:'voice',options:[['voice','Establecer normas de respeto y contra el acoso, dar participación al alumnado y mantener comunicación abierta con la familia.'],['adult','Definir las normas básicas desde el equipo docente y consultar al alumnado sobre actividades concretas de convivencia.'],['silence','Priorizar mensajes sobre lo que el grupo tiene en común y tratar las diferencias solo cuando afecten a la convivencia.'],['special','Mantener normas comunes, contemplando excepciones culturales cuando el equipo docente considere que facilitan la integración.']],why:'Un entorno seguro requiere normas claras, participación, trato equitativo y colaboración con las familias y la comunidad.'}
 ];
 
 const commonSurvey=window.COMMON_SURVEY;
 const surveyStatements=commonSurvey.statements;
+
+function orderedDiagnosisOptions(){
+  const good=diagnosisOptions.filter(o=>o.good);
+  const bad=diagnosisOptions.filter(o=>!o.good);
+  const out=[]; let gi=0,bi=0;
+  const pattern=['b','g','g','b','g','b','g','g','g'];
+  pattern.forEach(k=>{if(k==='g'&&gi<good.length)out.push(good[gi++]);if(k==='b'&&bi<bad.length)out.push(bad[bi++]);});
+  return out.concat(good.slice(gi),bad.slice(bi));
+}
+function orderedChoices(options,correct,index){
+  const right=options.find(([v])=>v===correct);
+  const wrong=options.filter(([v])=>v!==correct);
+  const positions=[1,2,3,1,3,2];
+  const out=[...wrong]; out.splice(Math.min(positions[index%positions.length],out.length),0,right); return out;
+}
 
 function show(name){
  Object.values(screens).forEach(id=>document.getElementById(id).classList.remove('active'));
@@ -49,7 +64,7 @@ function feedback(el,html,type='good'){el.className=`feedback ${type}`;el.innerH
 
 function renderDiagnosis(){
  const grid=document.getElementById('diagnosisGrid');
- diagnosisOptions.forEach(o=>{
+ orderedDiagnosisOptions().forEach(o=>{
   const btn=document.createElement('button');btn.className='block-option';btn.dataset.id=o.id;
   btn.innerHTML=`<strong>${o.title}</strong><span>${o.text}</span>`;
   btn.addEventListener('click',()=>btn.classList.toggle('selected'));
@@ -61,7 +76,7 @@ function renderTheory(){
  const grid=document.getElementById('theoryGrid');
  theoryItems.forEach((item,i)=>{
   const card=document.createElement('div');card.className='match-card';
-  card.innerHTML=`<strong>${item.prompt}</strong><select id="theory-${i}"><option value="">Selecciona la explicación</option>${item.options.map(([v,l])=>`<option value="${v}">${l}</option>`).join('')}</select>`;
+  card.innerHTML=`<strong>${item.prompt}</strong><select id="theory-${i}"><option value="">Selecciona la explicación</option>${orderedChoices(item.options,item.correct,i).map(([v,l])=>`<option value="${v}">${l}</option>`).join('')}</select>`;
   grid.appendChild(card);
  });
 }
@@ -70,7 +85,7 @@ function renderApply(){
  const grid=document.getElementById('applyGrid');
  applyItems.forEach((item,i)=>{
   const card=document.createElement('div');card.className='match-card';
-  card.innerHTML=`<strong>${item.prompt}</strong><select id="apply-${i}"><option value="">Selecciona la actuación más adecuada</option>${item.options.map(([v,l])=>`<option value="${v}">${l}</option>`).join('')}</select>`;
+  card.innerHTML=`<strong>${item.prompt}</strong><select id="apply-${i}"><option value="">Selecciona la actuación más adecuada</option>${orderedChoices(item.options,item.correct,i).map(([v,l])=>`<option value="${v}">${l}</option>`).join('')}</select>`;
   grid.appendChild(card);
  });
 }
