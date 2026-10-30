@@ -21,15 +21,27 @@ const theoryItems=[
 ];
 
 const applyItems=[
-{prompt:'Para prevenir la discriminación a nivel de centro...',correct:'policy',options:[['policy','Establecer políticas claras de no discriminación, comunicarlas y aplicarlas de forma consistente.'],['informal','Actuar solo cuando el problema sea muy grave.'],['private','Dejar cada caso exclusivamente al criterio individual del tutor.'],['avoid','Evitar hablar de discriminación para no generar conflicto.']],why:'El Tema 3 propone políticas claras y firmes como base institucional para combatir la discriminación.'},
-{prompt:'Para evitar expectativas docentes sesgadas...',correct:'training',options:[['training','Formar al profesorado para identificar prejuicios, revisar expectativas y garantizar oportunidades equitativas.'],['lower','Mantener expectativas más bajas para evitar frustración.'],['same','Asignar siempre exactamente la misma tarea sin considerar barreras ni necesidades.'],['ignore','No revisar las propias prácticas docentes.']],why:'La formación docente permite reconocer sesgos y abordar la diversidad de forma inclusiva y respetuosa.'},
-{prompt:'Para asegurar la participación del alumnado con discapacidad...',correct:'adapt',options:[['adapt','Adaptar actividades, materiales o espacios cuando sea necesario para asegurar la participación de todos.'],['exclude','Eximir al estudiante de las actividades colectivas.'],['separate','Crear siempre una actividad paralela aislada.'],['wait','Esperar a que el estudiante se adapte por sí solo.']],why:'La inclusión exige eliminar barreras y adaptar las actividades para garantizar participación real.'},
-{prompt:'Ante un caso concreto de discriminación...',correct:'case',options:[['case','Detectar, escuchar y apoyar a la persona afectada, intervenir, implicar a las familias cuando proceda y realizar seguimiento.'],['punish','Aplicar una sanción automática y cerrar el caso.'],['mediate-only','Mediar sin comprobar si existe desigualdad o victimización.'],['ignore','Esperar a que desaparezca espontáneamente.']],why:'La intervención debe proteger al alumnado afectado, actuar sobre la conducta discriminatoria y mantener seguimiento.'},
-{prompt:'Para trabajar la dimensión social del problema...',correct:'community',options:[['community','Cuestionar prejuicios y estereotipos, trabajar valores democráticos e implicar a familias y comunidad.'],['walls','Limitar toda actuación al aula y evitar el entorno social.'],['lecture','Dar una única charla sin continuidad.'],['individual','Responsabilizar solo a quien sufre la discriminación de adaptarse.']],why:'El Tema 3 señala que los prejuicios sociales llegan a la escuela y que familias, comunidad y educación pueden contribuir a combatirlos.'}
+{prompt:'Para prevenir la discriminación a nivel de centro...',correct:'policy',options:[['policy','Establecer políticas claras de no discriminación, comunicarlas y aplicarlas de forma consistente.'],['informal','Priorizar intervenciones individualizadas cuando aparezcan incidentes y revisar después si es necesario establecer medidas generales.'],['private','Aplicar orientaciones comunes, dejando al tutor margen amplio para decidir la respuesta en cada caso.'],['avoid','Trabajar convivencia y respeto de forma general, sin abordar específicamente categorías de discriminación.']],why:'El Tema 3 propone políticas claras y firmes como base institucional para combatir la discriminación.'},
+{prompt:'Para evitar expectativas docentes sesgadas...',correct:'training',options:[['training','Formar al profesorado para identificar prejuicios, revisar expectativas y garantizar oportunidades equitativas.'],['lower','Ajustar el nivel de exigencia a las expectativas previas del profesorado para asegurar experiencias de éxito.'],['same','Aplicar criterios y tareas comunes a todo el alumnado para garantizar un trato formalmente igual.'],['ignore','Centrar la revisión en las conductas del alumnado y mantener estables las prácticas docentes si cumplen el currículo.']],why:'La formación docente permite reconocer sesgos y abordar la diversidad de forma inclusiva y respetuosa.'},
+{prompt:'Para asegurar la participación del alumnado con discapacidad...',correct:'adapt',options:[['adapt','Adaptar actividades, materiales o espacios cuando sea necesario para asegurar la participación de todos.'],['exclude','Ofrecer una actividad alternativa específica cuando la tarea común presente barreras de participación.'],['separate','Diseñar apoyos fuera del grupo ordinario para que el estudiante trabaje objetivos equivalentes con mayor seguridad.'],['wait','Mantener la propuesta común durante un periodo inicial y valorar adaptaciones solo si persisten las dificultades.']],why:'La inclusión exige eliminar barreras y adaptar las actividades para garantizar participación real.'},
+{prompt:'Ante un caso concreto de discriminación...',correct:'case',options:[['case','Detectar, escuchar y apoyar a la persona afectada, intervenir, implicar a las familias cuando proceda y realizar seguimiento.'],['punish','Aplicar la consecuencia prevista en las normas del centro y revisar posteriormente si el conflicto se ha resuelto.'],['mediate-only','Iniciar una mediación entre las partes para reconstruir la relación antes de analizar otros factores del caso.'],['ignore','Observar la evolución durante unos días y actuar si el problema se repite o aumenta su intensidad.']],why:'La intervención debe proteger al alumnado afectado, actuar sobre la conducta discriminatoria y mantener seguimiento.'},
+{prompt:'Para trabajar la dimensión social del problema...',correct:'community',options:[['community','Cuestionar prejuicios y estereotipos, trabajar valores democráticos e implicar a familias y comunidad.'],['walls','Concentrar la intervención en el grupo-clase y trasladar información a las familias cuando sea necesario.'],['lecture','Programar varias sesiones de sensibilización a lo largo del curso sin modificar otras prácticas del centro.'],['individual','Trabajar estrategias personales de afrontamiento con el alumnado afectado y complementar después con medidas grupales.']],why:'El Tema 3 señala que los prejuicios sociales llegan a la escuela y que familias, comunidad y educación pueden contribuir a combatirlos.'}
 ];
 
 const commonSurvey=window.COMMON_SURVEY;
 const surveyStatements=commonSurvey.statements;
+
+function orderedDiagnosisOptions(){
+  const good=diagnosisOptions.filter(o=>o.good), bad=diagnosisOptions.filter(o=>!o.good);
+  const out=[]; let gi=0,bi=0; const pattern=['b','g','g','b','g','b','g','g','g'];
+  pattern.forEach(k=>{if(k==='g'&&gi<good.length)out.push(good[gi++]);if(k==='b'&&bi<bad.length)out.push(bad[bi++]);});
+  return out.concat(good.slice(gi),bad.slice(bi));
+}
+function orderedChoices(options,correct,index){
+  const right=options.find(([v])=>v===correct), wrong=options.filter(([v])=>v!==correct);
+  const positions=[1,2,3,1,3,2]; const out=[...wrong];
+  out.splice(Math.min(positions[index%positions.length],out.length),0,right); return out;
+}
 
 function show(name){
  Object.values(screens).forEach(id=>document.getElementById(id).classList.remove('active'));
@@ -46,15 +58,15 @@ function feedback(el,html,type='good'){el.className=`feedback ${type}`;el.innerH
 
 function renderDiagnosis(){
  const grid=document.getElementById('diagnosisGrid');
- diagnosisOptions.forEach(o=>{const btn=document.createElement('button');btn.className='block-option';btn.dataset.id=o.id;btn.innerHTML=`<strong>${o.title}</strong><span>${o.text}</span>`;btn.addEventListener('click',()=>btn.classList.toggle('selected'));grid.appendChild(btn);});
+ orderedDiagnosisOptions().forEach(o=>{const btn=document.createElement('button');btn.className='block-option';btn.dataset.id=o.id;btn.innerHTML=`<strong>${o.title}</strong><span>${o.text}</span>`;btn.addEventListener('click',()=>btn.classList.toggle('selected'));grid.appendChild(btn);});
 }
 function renderTheory(){
  const grid=document.getElementById('theoryGrid');
- theoryItems.forEach((item,i)=>{const card=document.createElement('div');card.className='match-card';card.innerHTML=`<strong>${item.prompt}</strong><select id="theory-${i}"><option value="">Selecciona la explicación</option>${item.options.map(([v,l])=>`<option value="${v}">${l}</option>`).join('')}</select>`;grid.appendChild(card);});
+ theoryItems.forEach((item,i)=>{const card=document.createElement('div');card.className='match-card';card.innerHTML=`<strong>${item.prompt}</strong><select id="theory-${i}"><option value="">Selecciona la explicación</option>${orderedChoices(item.options,item.correct,i).map(([v,l])=>`<option value="${v}">${l}</option>`).join('')}</select>`;grid.appendChild(card);});
 }
 function renderApply(){
  const grid=document.getElementById('applyGrid');
- applyItems.forEach((item,i)=>{const card=document.createElement('div');card.className='match-card';card.innerHTML=`<strong>${item.prompt}</strong><select id="apply-${i}"><option value="">Selecciona la actuación</option>${item.options.map(([v,l])=>`<option value="${v}">${l}</option>`).join('')}</select>`;grid.appendChild(card);});
+ applyItems.forEach((item,i)=>{const card=document.createElement('div');card.className='match-card';card.innerHTML=`<strong>${item.prompt}</strong><select id="apply-${i}"><option value="">Selecciona la actuación</option>${orderedChoices(item.options,item.correct,i).map(([v,l])=>`<option value="${v}">${l}</option>`).join('')}</select>`;grid.appendChild(card);});
 }
 function renderSurvey(){
  const box=document.getElementById('surveyItems');
