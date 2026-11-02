@@ -34,9 +34,11 @@ La corrección abierta de esta versión **no utiliza todavía IA**. Se emplean r
 La preparación del examen tiene un índice independiente, sin alterar la numeración de las sesiones temáticas:
 
 - **[Índice de preparación del examen](preparacion-examen/)**.
-- **Sesión 1: CEIP La Encina · Un comienzo para todos** ([abrir simulacro](simulacro-examen-plan2026/)). Preguntas abiertas, elección de dos optativas y autoevaluación orientativa con rúbrica y retroalimentación guiada.
+- **Sesión 1: CEIP La Estación · Una feria de ideas para todos**. Temas 1, 3 y 4. Supuesto planteado; preguntas y actividad web en preparación.
+- **Sesión 2: pendiente de definir**.
+- **Sesión 3: CEIP La Encina · Un comienzo para todos** ([abrir simulacro](simulacro-examen-plan2026/)). Temas 2, 5 y 8. Preguntas abiertas, elección de dos optativas y autoevaluación orientativa con rúbrica y retroalimentación guiada.
 
-Los futuros simulacros se incorporarán como sesiones consecutivas a este índice. Es material formativo complementario al temario oficial, no un examen ni una corrección oficial.
+Los futuros simulacros se incorporarán en el orden acordado en este índice. Es material formativo complementario al temario oficial, no un examen ni una corrección oficial.
 
 ## Publicación
 
