@@ -35,7 +35,7 @@ La preparación del examen tiene un índice independiente, sin alterar la numera
 
 - **[Índice de preparación del examen](preparacion-examen/)**.
 - **Sesión 1: CEIP La Estación · Una feria de ideas para todos** ([abrir simulacro](simulacro-examen-la-estacion/)). Clase 11, temas 1, 3 y 4. Cinco preguntas, autores del temario y evaluación orientativa guiada.
-- **Sesión 2: pendiente de definir**.
+- **Sesión 2: CEIP Horizonte · Una escuela que aprende con sus familias** ([abrir simulacro](simulacro-examen-ceip-horizonte/)). Temas 5 y 6. Cinco preguntas, autores del temario oficial, autoevaluación y retroalimentación guiada.
 - **Sesión 3: CEIP La Encina · Un comienzo para todos** ([abrir simulacro](simulacro-examen-plan2026/)). Temas 2, 5 y 8. Preguntas abiertas, elección de dos optativas y autoevaluación orientativa con rúbrica y retroalimentación guiada.
 
 Los futuros simulacros se incorporarán en el orden acordado en este índice. Es material formativo complementario al temario oficial, no un examen ni una corrección oficial.
