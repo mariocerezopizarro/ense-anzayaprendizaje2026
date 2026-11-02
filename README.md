@@ -29,6 +29,15 @@ La corrección abierta de esta versión **no utiliza todavía IA**. Se emplean r
 - incorporar un backend seguro para evaluación semántica de respuestas abiertas mediante IA;
 - mostrar al estudiante la parte concreta del temario en la que se basa cada feedback.
 
+## Preparación del examen · Plan 2026
+
+La preparación del examen tiene un índice independiente, sin alterar la numeración de las sesiones temáticas:
+
+- **[Índice de preparación del examen](preparacion-examen/)**.
+- **Sesión 1: CEIP La Encina · Un comienzo para todos** ([abrir simulacro](simulacro-examen-plan2026/)). Preguntas abiertas, elección de dos optativas y autoevaluación orientativa con rúbrica y retroalimentación guiada.
+
+Los futuros simulacros se incorporarán como sesiones consecutivas a este índice. Es material formativo complementario al temario oficial, no un examen ni una corrección oficial.
+
 ## Publicación
 
 El proyecto está preparado como aplicación web estática y puede publicarse mediante GitHub Pages.
