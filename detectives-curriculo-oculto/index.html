@@ -10,14 +10,21 @@
 </head>
 <body>
 <div class="shell">
-  <header class="header">
+  <header class="header" id="mainHeader">
     <div class="header-brand"><span class="emblem" aria-hidden="true">🔎</span><div><span class="eyebrow">TEMA 7 · COEDUCACIÓN</span><h1>Detectives del currículo oculto</h1></div></div>
     <div class="header-stats" aria-live="polite"><div><small>Hallazgos</small><strong id="foundCount">0 / 6</strong></div><div><small>Puntos</small><strong id="scoreCount">0</strong></div></div>
   </header>
   <main>
-    <section id="startPanel" class="intro card" aria-labelledby="startTitle">
-      <div class="intro-symbol" aria-hidden="true">🕵️</div>
-      <div><p class="eyebrow">RETO INTERACTIVO</p><h2 id="startTitle">La escuela no es un espacio neutral</h2><p>Observa el aula y encuentra <strong>6 indicios</strong> que podrían transmitir expectativas, roles o mensajes de género. Haz clic en los detalles de la ilustración para conseguir puntos.</p><p class="micro">Importante: una imagen por sí sola no demuestra que exista discriminación. En este juego buscamos <strong>preguntas para investigar</strong>, no culpables.</p><button id="startBtn" class="btn primary">Empezar a investigar <span aria-hidden="true">→</span></button></div>
+    <section id="startPanel" class="cover-start card" aria-labelledby="startTitle">
+      <div class="cover-visual">
+        <img src="assets/cover.webp" alt="Portada ilustrada del juego Detectives del currículo oculto, con instrucciones y autoría" class="cover-image">
+        <div class="cover-actions">
+          <button id="startBtn" class="cover-hit cover-play" aria-label="Jugar"><span class="visually-hidden">Jugar</span></button>
+          <button id="instructionsBtn" class="cover-hit cover-instructions" aria-label="Ver instrucciones"><span class="visually-hidden">Instrucciones</span></button>
+          <button id="creditsBtn" class="cover-hit cover-credits" aria-label="Ver créditos"><span class="visually-hidden">Créditos</span></button>
+        </div>
+      </div>
+      <p class="cover-disclaimer">Investiga la escena y detecta situaciones o elementos que <strong>podrían</strong> transmitir mensajes no neutrales. El objetivo es aprender a observar, no juzgar una imagen de forma automática.</p>
     </section>
 
     <section id="gamePanel" class="game-panel hidden" aria-labelledby="gameTitle">
@@ -39,8 +46,34 @@
       <div class="results-actions"><button class="btn primary" id="playAgainBtn">Volver a jugar ↻</button><button class="btn subtle" id="copyBtn">Copiar resumen</button></div>
     </section>
   </main>
-  <footer><span>Recurso didáctico · Enseñanza y aprendizaje en el contexto familiar, social y escolar</span><span>Sin registro ni recogida de datos</span></footer>
+  <footer><span>Recurso didáctico · Enseñanza y aprendizaje en el contexto familiar, social y escolar</span><span>Autoría: Mario Cerezo Pizarro · ChatGPT · GitHub Pages</span></footer>
 </div>
+
+<div class="modal hidden" id="instructionsModal" aria-hidden="true">
+  <div class="modal-card card">
+    <h2>Cómo jugar</h2>
+    <ol>
+      <li>Observa la ilustración del aula con atención.</li>
+      <li>Haz clic en los <strong>6 elementos o situaciones</strong> que pueden transmitir mensajes no neutrales.</li>
+      <li>Cada hallazgo suma <strong>10 puntos</strong>.</li>
+      <li>Al final podrás leer una explicación y una propuesta coeducativa para cada caso.</li>
+    </ol>
+    <p class="micro">Recuerda: el juego no busca señalar culpables, sino aprender a detectar indicios del currículo oculto y debatir cómo transformar la práctica educativa.</p>
+    <div class="modal-actions"><button class="btn subtle closeModal">Cerrar</button></div>
+  </div>
+</div>
+
+<div class="modal hidden" id="creditsModal" aria-hidden="true">
+  <div class="modal-card card">
+    <h2>Créditos</h2>
+    <p><strong>Autoría principal:</strong> Mario Cerezo Pizarro</p>
+    <p><strong>Diseño, apoyo creativo y desarrollo asistido:</strong> ChatGPT</p>
+    <p><strong>Publicación web prevista:</strong> GitHub Pages</p>
+    <p><strong>Contexto didáctico:</strong> Tema 7 · Coeducación y currículo oculto · UNIR</p>
+    <div class="modal-actions"><button class="btn subtle closeModal">Cerrar</button></div>
+  </div>
+</div>
+
 <script src="script.js"></script>
 </body>
 </html>
