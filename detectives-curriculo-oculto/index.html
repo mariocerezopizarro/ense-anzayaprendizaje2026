@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0753a8">
+  <meta name="description" content="Juego educativo: descubre posibles mensajes implícitos en el aula y reflexiona sobre el currículo oculto de género.">
+  <title>Detectives del currículo oculto · Tema 7</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="shell">
+  <header class="header">
+    <div class="header-brand"><span class="emblem" aria-hidden="true">🔎</span><div><span class="eyebrow">TEMA 7 · COEDUCACIÓN</span><h1>Detectives del currículo oculto</h1></div></div>
+    <div class="header-stats" aria-live="polite"><div><small>Hallazgos</small><strong id="foundCount">0 / 6</strong></div><div><small>Puntos</small><strong id="scoreCount">0</strong></div></div>
+  </header>
+  <main>
+    <section id="startPanel" class="intro card" aria-labelledby="startTitle">
+      <div class="intro-symbol" aria-hidden="true">🕵️</div>
+      <div><p class="eyebrow">RETO INTERACTIVO</p><h2 id="startTitle">La escuela no es un espacio neutral</h2><p>Observa el aula y encuentra <strong>6 indicios</strong> que podrían transmitir expectativas, roles o mensajes de género. Haz clic en los detalles de la ilustración para conseguir puntos.</p><p class="micro">Importante: una imagen por sí sola no demuestra que exista discriminación. En este juego buscamos <strong>preguntas para investigar</strong>, no culpables.</p><button id="startBtn" class="btn primary">Empezar a investigar <span aria-hidden="true">→</span></button></div>
+    </section>
+
+    <section id="gamePanel" class="game-panel hidden" aria-labelledby="gameTitle">
+      <div class="game-top"><div><h2 id="gameTitle">¿Dónde se esconden los mensajes?</h2><p>Haz clic en seis zonas de la escena. Cada hallazgo suma <strong>10 puntos</strong>.</p></div><div class="game-actions"><button id="hintBtn" class="btn subtle" type="button">💡 Pista</button><button id="resetBtn" class="btn ghost" type="button">↺ Reiniciar</button></div></div>
+      <div class="progress" role="progressbar" aria-label="Progreso de hallazgos" aria-valuemin="0" aria-valuemax="6" aria-valuenow="0" id="progress"><div id="progressFill"></div></div>
+      <div class="scene-wrap" id="sceneWrap">
+        <img src="assets/aula.webp" alt="Ilustración de aula infantil con docente, asamblea, rincones de juego, construcciones y cajas de juguetes" id="sceneImage" draggable="false">
+        <div id="hotspots" class="hotspot-layer" aria-label="Zonas de la ilustración para investigar"></div>
+        <div class="scene-note" id="sceneNote" role="status" aria-live="polite">Observa con atención: no todo lo que ves es necesariamente un estereotipo.</div>
+      </div>
+      <div class="below-scene"><p id="feedback" role="status" aria-live="polite">Busca los detalles y pulsa sobre ellos.</p><button class="btn finish hidden" id="finishBtn">Ver la explicación de mis hallazgos →</button></div>
+    </section>
+
+    <section id="resultsPanel" class="results card hidden" aria-labelledby="resultsTitle">
+      <div class="results-heading"><div><p class="eyebrow">MISIÓN COMPLETADA</p><h2 id="resultsTitle">¡Has investigado el aula!</h2><p>Has encontrado los seis indicios. Ahora viene lo importante: <strong>interpretarlos con sentido crítico</strong>.</p></div><div class="results-score"><strong id="finalScore">60</strong><span>puntos</span></div></div>
+      <div id="explanations" class="explanation-list"></div>
+      <div class="conclusion"><strong>Idea clave</strong><p>El currículo oculto no está en un juguete o en una acción aislada, sino en los <strong>patrones que se repiten</strong>: a quién damos la palabra, qué expectativas transmitimos, quién ocupa el espacio y cómo repartimos responsabilidades. Observar, contrastar y transformar es coeducar.</p></div>
+      <div class="reflection"><h3>Para debatir en clase</h3><p>¿Qué observarías durante una semana para comprobar si estos posibles sesgos ocurren realmente? ¿Qué cambios concretos introducirías?</p></div>
+      <div class="results-actions"><button class="btn primary" id="playAgainBtn">Volver a jugar ↻</button><button class="btn subtle" id="copyBtn">Copiar resumen</button></div>
+    </section>
+  </main>
+  <footer><span>Recurso didáctico · Enseñanza y aprendizaje en el contexto familiar, social y escolar</span><span>Sin registro ni recogida de datos</span></footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
